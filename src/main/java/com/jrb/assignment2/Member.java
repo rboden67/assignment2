@@ -136,11 +136,11 @@ public class Member {
 		return ytdtotdt.toString();
 	}
 
-	public double getYtdtot() {
+	public Double getYtdtot() {
 		return ytdtot;
 	}
 
-	public void setYtdtot(double ytdtot) {
+	public void setYtdtot(Double ytdtot) {
 		this.ytdtot = ytdtot;
 	}
 
