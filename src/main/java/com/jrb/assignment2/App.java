@@ -26,7 +26,7 @@ public class App
 		
 		ObjectMapper om = new ObjectMapper();
 		try {
-			System.out.println(om.writeValueAsString(member));
+			System.out.println(om.writerWithDefaultPrettyPrinter().writeValueAsString(member));
 			
 		} catch (JsonProcessingException e) {
 			// TODO Auto-generated catch block
