@@ -51,7 +51,7 @@ public class Member {
 	private Date ytdtotdt;
 
 	@Column(name = "YTD_Total")
-	private double ytdtot;
+	private Double ytdtot;
 
 	@Column(name = "Password")
 	private long password;
@@ -67,7 +67,7 @@ public class Member {
 		this.status = "";
 		this.memdt = null;
 		this.ytdtotdt = null;
-		this.ytdtot = 0;
+		this.ytdtot = null;
 		this.password = -1;
 		this.passwordatt = 0;
 	}
@@ -133,6 +133,9 @@ public class Member {
 	}
 
 	public String getYtdtotdtS() {
+		if (ytdtotdt == null){
+			return null;
+		}
 		return ytdtotdt.toString();
 	}
 
