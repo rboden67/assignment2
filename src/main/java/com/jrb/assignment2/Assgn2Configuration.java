@@ -19,16 +19,16 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 @Configuration
 @EnableTransactionManagement
 public class Assgn2Configuration {
-//	
-//    @Bean
-//    public DataSource dataSource() {
-//        DriverManagerDataSource dataSource = new DriverManagerDataSource();
-//        dataSource.setDriverClassName("com.mysql.cj.jdbc.Driver");
-//        dataSource.setUrl("jdbc:mysql://localhost/CLUB294?serverTimezone=UTC&useSSL=false");
-//        dataSource.setUsername("root");
-//        dataSource.setPassword("ryan");
-//        return dataSource;
-//    }
+	
+    @Bean
+    public DataSource dataSource() {
+        DriverManagerDataSource dataSource = new DriverManagerDataSource();
+        dataSource.setDriverClassName("com.mysql.cj.jdbc.Driver");
+        dataSource.setUrl("jdbc:mysql://localhost/CLUB294?serverTimezone=UTC&useSSL=false");
+        dataSource.setUsername("root");
+        dataSource.setPassword("ryan");
+        return dataSource;
+    }
 	@Bean
 	@Autowired
 	public PlatformTransactionManager transactionManager(EntityManagerFactory entityManagerFactory) {
@@ -42,7 +42,7 @@ public class Assgn2Configuration {
         LocalContainerEntityManagerFactoryBean factoryBean = 
             new LocalContainerEntityManagerFactoryBean();
         factoryBean.setPersistenceProviderClass(HibernatePersistenceProvider.class);
-//        factoryBean.setDataSource(dataSource());
+        factoryBean.setDataSource(dataSource());
         factoryBean.setPackagesToScan("com.jrb.assignment2");
         factoryBean.setJpaPropertyMap(jpaProperties());
         return factoryBean;
@@ -50,7 +50,7 @@ public class Assgn2Configuration {
 	private Map<String,?> jpaProperties() {
         Map<String,String> jpaPropertiesMap = new HashMap<String,String>();
         jpaPropertiesMap.put("hibernate.dialect", "org.hibernate.dialect.MySQLDialect");
-        jpaPropertiesMap.put("hibernate.hbm2ddl.auto", "update");
+        //jpaPropertiesMap.put("hibernate.hbm2ddl.auto", "none");
         return jpaPropertiesMap;
     }
 
