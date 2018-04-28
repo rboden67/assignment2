@@ -8,7 +8,16 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "tblcodes")
 public class TransCd {
-	private String transcd, transtype, transdesc;
+//	private String transcd, transtype, transdesc;
+	@Id
+	@Column(name = "TransCd")
+	private String transcd;
+	
+	@Column(name = "TransType")
+	private String transtype;
+	
+	@Column(name = "TransDesc")
+	private String transdesc;
 
 	public TransCd() {
 		transcd = "";
@@ -16,8 +25,6 @@ public class TransCd {
 		transdesc = "";
 	}
 
-	@Id
-	@Column(name = "TransCd")
 	public String getTranscd() {
 		return transcd;
 	}
@@ -26,7 +33,6 @@ public class TransCd {
 		this.transcd = transcd;
 	}
 
-	@Column(name = "TransType")
 	public String getTranstype() {
 		return transtype;
 	}
@@ -35,7 +41,6 @@ public class TransCd {
 		this.transtype = transtype;
 	}
 
-	@Column(name = "TransDesc")
 	public String getTransdesc() {
 		return transdesc;
 	}
@@ -43,5 +48,6 @@ public class TransCd {
 	public void setTransdesc(String transdesc) {
 		this.transdesc = transdesc;
 	}
+
 
 }
