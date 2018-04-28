@@ -26,7 +26,7 @@ public class App
 
 		transaction.begin();
 		Query query = entityManager.createQuery(
-	            "select MemId from tblMembers");
+	            "select memid from Member");
 //	    query.setParameter(1, "Jo%");
 	    List<Member> members = query.getResultList();
 	    System.out.println(members);
