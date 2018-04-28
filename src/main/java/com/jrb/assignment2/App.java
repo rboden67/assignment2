@@ -1,9 +1,12 @@
 package com.jrb.assignment2;
 
+import java.util.List;
+
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
 import javax.persistence.Persistence;
+import javax.persistence.Query;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -22,7 +25,13 @@ public class App
 		EntityTransaction transaction = entityManager.getTransaction();
 
 		transaction.begin();
+		Query query = entityManager.createQuery(
+	            "select MemId from tblMembers");
+//	    query.setParameter(1, "Jo%");
+	    List<Member> members = query.getResultList();
+	    System.out.println(members);
 		Member member = entityManager.find(Member.class, "A043");
+		
 		
 		ObjectMapper om = new ObjectMapper();
 		try {

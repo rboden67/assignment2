@@ -4,6 +4,7 @@ import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
+import java.util.Set;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -168,6 +169,7 @@ public class Member {
 		return false;
 	}
 
+	
 	public String toString() {
 		return this.memid + ", " + this.lastname + ", " + this.firstname + ", " + this.memdt + ", " + this.status;
 	}
