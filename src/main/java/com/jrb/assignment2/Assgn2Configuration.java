@@ -24,9 +24,9 @@ public class Assgn2Configuration {
     public DataSource dataSource() {
         DriverManagerDataSource dataSource = new DriverManagerDataSource();
         dataSource.setDriverClassName("com.mysql.cj.jdbc.Driver");
-        dataSource.setUrl("jdbc:mysql://localhost/CLUB294?serverTimezone=UTC&useSSL=false");
-        dataSource.setUsername("root");
-        dataSource.setPassword("ryan");
+        dataSource.setUrl("jdbc:mysql://localhost/CLUB296?serverTimezone=UTC&useSSL=false");
+        dataSource.setUsername("webapp_user");
+        dataSource.setPassword("testing123");
         return dataSource;
     }
 	@Bean

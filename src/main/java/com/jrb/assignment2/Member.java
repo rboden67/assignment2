@@ -68,7 +68,7 @@ public class Member {
 		this.status = "";
 		this.memdt = null;
 		this.ytdtotdt = null;
-		this.ytdtot = null;
+		this.ytdtot = 0d;
 		this.password = -1;
 		this.passwordatt = 0;
 	}
